@@ -1,0 +1,14 @@
+.floatLeft {
+    float: left;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.floatRight {
+    float: right;
+}
+
+#cardheader {
+    width: 100%;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,40 @@
+/* Chat containers */
+.speechBubble {
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    padding: 40px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker , .left {
+    border-color: #ccc;
+    background-color: #ddecff;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style time text */
+.timeRight {
+    float: right;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+/* Style time text */
+.timeLeft {
+    float: left;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.chatMsg {
+    font-size: 12pt !important;
+    color: black;
+    display: block;
+}
