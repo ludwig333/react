@@ -158,7 +158,7 @@ class FooterToolbar extends Component {
 
     render() {
         const kommuneNr = this.props.kommuneNr;
-        console.log("VVVVV",kommuneNr);
+        console.log("SamlesakActive",this.props.SamlesakActive);
         console.log("saklist",this.props.sakList);
         const div = (txt) => {
           return <div style={{color : "#bcd6ff", fontFamily: "monospace", top : "-8px"}}> {txt} </div>
@@ -204,7 +204,9 @@ class FooterToolbar extends Component {
 
         }
 
-        const listItemsOpprett = [
+        let listItemsOpprett;
+        if(this.props.SamlesakActive){
+         listItemsOpprett = [
           ["Innbetaling", "I", "NY_INNBETALING"],
           ["Tiltak", "T", "NYTT_TILTAK"],
           ["Notat", "N", "NYTT_NOTAT"],
@@ -214,6 +216,18 @@ class FooterToolbar extends Component {
           ["Samlesak (Beta)", "", "NY_SAMLESAK"],
           ["Ettergivelse", "E", "ETTERGIVELSE"]
         ]
+        }
+        else{
+         listItemsOpprett = [
+          ["Innbetaling", "I", "NY_INNBETALING"],
+          ["Tiltak", "T", "NYTT_TILTAK"],
+          ["Notat", "N", "NYTT_NOTAT"],
+          ["Fordring", "F", "NY_FORDRING"],
+          ["Debitornotat", "D", "DEBITOR_NOTAT"],
+          ["Skyggesak", "U", "NY_SKYGGESAK"],
+          ["Ettergivelse", "E", "ETTERGIVELSE"]
+        ]
+        }
 
 
         return (
@@ -375,6 +389,7 @@ function mapStateToProps(state) {
     const saksnr = generellInfo.data.Nr;
     const langtid = generellInfo.data.langtid;
     const paa_vent = generellInfo.data.paa_vent === "True" ? true : false;
+    const SamlesakActive = generellInfo.data.SamlesakActive;
     const avsluttet = generellInfo.data.Avsluttet.includes("0000") ? false : true;
     const kumulert_til = generellInfo.data.Kumulert_til !== "";
     const er_skyggesak = generellInfo.data.Skygger_sak;
@@ -401,7 +416,8 @@ function mapStateToProps(state) {
         debitor_nr,
         info,
         kommuneNr,
-        MaxVent
+        MaxVent,
+        SamlesakActive
     }
 }
 
