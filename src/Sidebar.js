@@ -195,7 +195,7 @@ class Sidebar extends React.Component {
 
       {
         (() => {
-          if(data["Skygger_sak"] === 7) {
+          if(data["Status"] === 7) {
             return(
             <div className="top-toolbar-info">
               <div className="keys" style={{ color: "yellow" }}>
@@ -205,7 +205,7 @@ class Sidebar extends React.Component {
             </div>
             )
           }
-          else if(data["Skygger_sak"] === 2){
+          else if(data["Status"] === 2){
             return(
             <div className="top-toolbar-info">
               <div className="keys" style={{ color: "yellow" }}>
