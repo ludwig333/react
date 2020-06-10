@@ -195,7 +195,7 @@ class App extends Component {
               />
               <DebitorInfo info={debitor.data} />
               {
-               generellInfo.data["Skygger_sak"] === 7 ? (<SamlesakList/>) : null
+               generellInfo.data["Status"] === 7 ? (<SamlesakList/>) : null
               }
               <SMSlist />
               <DebitorNotat debitor={debitor} />
